@@ -1,0 +1,25 @@
+pifuscate 1.0 - A file encryptor/decryptor based on digits of pi.
+usage:
+pifuscate {encrypt|decrypt|--help} [Options] infile
+
+Options:
+-o <outfile>
+	Outputs the pifuscate code to file <outfile>.
+	By default the output will be stdout.
+-k <key>
+	Starts the pifuscation at index key.
+	The key should be a number between 0 and 65535.
+	The default is 314.
+-i <iterations>
+	Runs the algorithm <iterations> number of times. (More is slower)
+	The default is 1.
+
+Examples:
+encrypting a file with the key 1337 25 times:
+
+	pifuscate encrypt -k 1337 -i 25 file -o outfile
+
+decrypting the same file and printing it on stdout:
+
+	pifuscate decrypt -k 1337 -i 25 outfile
+
