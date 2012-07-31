@@ -1,8 +1,10 @@
-#include "pifuscate.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+/* import the pi digits from the data segment */
+extern char _binary_pi_bin_start[];
+#define pi _binary_pi_bin_start
 static unsigned short key = 0;
 
 int rotr(int inbyte, int rotamt) {
