@@ -117,7 +117,7 @@ int main(int argc, char* argv[]) {
     
   } else {
   
-    input = fopen(ifilename, "r");
+    input = fopen(ifilename, "rb");
   }
   
   if (input == NULL) {
@@ -127,7 +127,7 @@ int main(int argc, char* argv[]) {
     exit(1);
   }
   
-  if (!strcmp(ifilename, ofilename)) {
+  if (ofilename != NULL && !strcmp(ifilename, ofilename)) {
   
     fprintf(stderr, "Input and output files cannot match!\n");
     exit(1);
@@ -139,7 +139,7 @@ int main(int argc, char* argv[]) {
   
   } else {
   
-    output = fopen(ofilename, "w");
+    output = fopen(ofilename, "w+b");
   }
   
   if (output == NULL) {
